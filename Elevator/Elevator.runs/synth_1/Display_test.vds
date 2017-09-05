@@ -1,0 +1,1099 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Tue Sep 05 17:54:08 2017
+# Process ID: 1724
+# Log file: D:/Elevator/Elevator/Elevator.runs/synth_1/Display_test.vds
+# Journal file: D:/Elevator/Elevator/Elevator.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Display_test.tcl -notrace
+Command: synth_design -top Display_test -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 264.492 ; gain = 91.633
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Display_test' [D:/Elevator/test_bentch/Display_tb.v:3]
+INFO: [Synth 8-638] synthesizing module 'ClockDivider' [D:/Elevator/ClockDivider.v:3]
+	Parameter times bound to: 50000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ClockDivider' (1#1) [D:/Elevator/ClockDivider.v:3]
+WARNING: [Synth 8-3848] Net AN in module/entity Display_test does not have driver. [D:/Elevator/test_bentch/Display_tb.v:5]
+WARNING: [Synth 8-3848] Net SEG in module/entity Display_test does not have driver. [D:/Elevator/test_bentch/Display_tb.v:6]
+INFO: [Synth 8-256] done synthesizing module 'Display_test' (2#1) [D:/Elevator/test_bentch/Display_tb.v:3]
+WARNING: [Synth 8-3917] design Display_test has port LED[15] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[10] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[9] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[8] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[7] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[6] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[5] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[4] driven by constant 0
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[7]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[6]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[5]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[4]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[3]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[2]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[1]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[0]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[7]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[6]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[5]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[4]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[3]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[2]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[1]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 298.770 ; gain = 125.910
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 298.770 ; gain = 125.910
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Elevator/DDR_nexys4.xdc]
+Finished Parsing XDC File [D:/Elevator/DDR_nexys4.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 599.168 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 7 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 7 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 33 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 33 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 34 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 34 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 35 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 35 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 36 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 36 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 37 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 37 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 38 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 38 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 39 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 39 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 40 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 40 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 41 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 41 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 42 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 42 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 43 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 43 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 44 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 44 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 45 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 45 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 46 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 46 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 47 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 47 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 48 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 48 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 60 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 60 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 61 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 61 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 62 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 62 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 63 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 63 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 64 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 64 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 65 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 65 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 66 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 66 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 68 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 68 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 70 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 70 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 71 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 71 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 72 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 72 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 73 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 73 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 74 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 74 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 75 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 75 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 76 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 76 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 77 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 77 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'clk' (ClockDivider) to 'clk2'
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Display_test 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+Module ClockDivider 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design Display_test has port LED[15] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[10] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[9] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[8] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[7] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[6] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[5] driven by constant 0
+WARNING: [Synth 8-3917] design Display_test has port LED[4] driven by constant 0
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[7]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[6]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[5]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[4]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[3]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[2]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[1]
+WARNING: [Synth 8-3331] design Display_test has unconnected port AN[0]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[7]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[6]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[5]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[4]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[3]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[2]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[1]
+WARNING: [Synth 8-3331] design Display_test has unconnected port SEG[0]
+WARNING: [Synth 8-3331] design Display_test has unconnected port CLK
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 599.168 ; gain = 426.309
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 599.168 ; gain = 426.309
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 7 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 7 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 33 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 33 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 34 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 34 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 35 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 35 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 36 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 36 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 37 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 37 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 38 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 38 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 39 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 39 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 40 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 40 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 41 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 41 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 42 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 42 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 43 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 43 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 44 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 44 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 45 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 45 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 46 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 46 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 47 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 47 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 48 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 48 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 60 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 60 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 61 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 61 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 62 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 62 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 63 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 63 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 64 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 64 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 65 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 65 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 66 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 66 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 68 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 68 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 70 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 70 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 71 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 71 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 72 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 72 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 73 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 73 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 74 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 74 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 75 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 75 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 76 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 76 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 77 of file D:/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 77 of file D:/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |     2|
+|2     |LUT2  |     2|
+|3     |LUT3  |     2|
+|4     |LUT4  |     2|
+|5     |OBUF  |    16|
+|6     |OBUFT |    16|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    40|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 599.168 ; gain = 88.242
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 599.168 ; gain = 426.309
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+14 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 599.168 ; gain = 388.836
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 599.168 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 05 17:54:30 2017...
