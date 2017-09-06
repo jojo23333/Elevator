@@ -1,10 +1,12 @@
 `timescale 1ns/1ns
 
-module StatusInputBuffer( floor, openflag, rst, upcall_input, downcall_input
-                        , floor_btn_input, upcall, downcall, floor_btn)
-    input floor, openflag, rst;
+module StatusInputBuffer( floor, status, rst, clk, upcall_input, downcall_input
+                        , floor_btn_input, upcall, downcall, floor_btn);
+    input rst, clk;
+    input [3:0] status;
+    input [2:0] floor;
     input [7:0] upcall_input, downcall_input, floor_btn_input;
-    output reg [7:0]upcall, downcall, floor_btn;
+    output reg [7:0] upcall, downcall, floor_btn;
 
     // Use bitor to Record the inputs
     initial begin
@@ -12,21 +14,21 @@ module StatusInputBuffer( floor, openflag, rst, upcall_input, downcall_input
         downcall <= 0;
         floor_btn <= 0;
     end
-    always @(upcall_input or openflag or rst) begin
+    always @(clk) begin
         upcall <= upcall | upcall_input; 
-        if(openflag)    upcall[floor] <= 0; 
+        if(status==7)    upcall[floor] <= 0; 
         else if(rst)    upcall <= 0;
     end
-    always @(downcall_input or openflag or rst) begin
+    always @(clk) begin
         downcall <= downcall  | downcall_input;
-        if(openflag)    downcall[floor] <= 0;
-        else if(rst)    upcall <= 0;
+        if(status==7)    downcall[floor] <= 0;
+        else if(rst)    downcall <= 0;
     end
 
-    always @(floor_btn_input or openflag or rst) begin
-        floor_btn <= floor | floor_btn_input;
-        if(openflag)    floor_btn[floor] <= 0;  
-        else if(rst)    upcall <= 0;     
+    always @(clk) begin
+        floor_btn <= floor_btn | floor_btn_input;
+        if(status==7)    floor_btn[floor] <= 0;  
+        else if(rst)    floor_btn <= 0;     
     end
 
 endmodule

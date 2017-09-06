@@ -5,12 +5,12 @@ Module_Name: Top Module
 Module_Function: set regs and inputs & outputs
 */
 
-module ECentralController(rst, CLK, SW[15:0], BTNU, BTNR, BTND, BTNL,
-                            LED[15:0], AN[7:0], SEG[7:0])
+module ECentralController(RST ,CLK, SW, BTNU, BTNR, BTND, BTNL, BTNC,
+                            LED, AN, SEG);
     input RST;                      // reset signal
     input CLK;                      // system clock
     input [15:0] SW;                 // switch input ,SW[7:0] directly represent the button in elevator
-    input BTNU, BTNR, BTND, BTNL;   // BTN for up or down
+    input BTNU, BTNR, BTND, BTNL, BTNC;   // BTN for up or down
 
     output [15:0] LED;
     output [7:0] AN;
@@ -23,21 +23,22 @@ module ECentralController(rst, CLK, SW[15:0], BTNU, BTNR, BTND, BTNL,
     wire [3:0] floor;
     wire [3:0] countdown;
     wire [7:0] floor_btn;
-    wire cnt_ck,s_clk;
+    wire cnt_ck,s_clk,i_clk;
 
-    parameter N_1S = 10000,NSCAN = 100000;
+    parameter N_1S = 50_000_000,NSCAN = 100_000,INSCAN = 500_000;
 
-    ClockDivider #(N_1S) clock1s(CLK, RST, cnt_ck);
-    ClockDivider #(NSCAN) clockscan(CLK, RST, s_clk);
+    ClockDivider #(N_1S) clock1s(CLK,cnt_ck);
+    ClockDivider #(NSCAN) clockscan(CLK, s_clk);
+    ClockDivider #(INSCAN) clockinput(CLK, i_clk);
 
     Display dis(.floor(floor), .countdown(countdown), .led(LED), .an(AN), 
                 .seg(SEG), .floor_btn(floor_btn), .ck(s_clk), .status(elevator_status));
     
-    InputProcessor pinput(.sw(SW), .btnu(BTNU), .btnd(BTND), .up(up_call), 
-                        .down(down_call));// , .elevator_btn(elevator_btn));
+    InputProcessor pinput(.sw(SW),.clk(i_clk),.btnc(BTNC) ,.btnu(BTNU), .btnd(BTND), .up(up_call), 
+                        .down(down_call) , .elevator_btn(floor_btn));
     
-    StatusTransition ms(.elevator_status(elevator_status), .upcall_input(up_call), .downcall_input(down_call), 
-                        .floor_btn_input(SW[7:0]), .door_btn({BTNL,BTNR}), .rst(RST), .ck(cnt_ck), 
+    StatusTransition ms(.sign(elevator_status), .upcall_input(up_call), .downcall_input(down_call), 
+                        .floor_btn_input(floor_btn), .door_btn({BTNL,BTNR}), .rst(RST), .clk(i_clk), .cnt_ck(cnt_ck), 
                         .floor(floor), .countdown(countdown), .floor_btn(floor_btn));
 
 endmodule

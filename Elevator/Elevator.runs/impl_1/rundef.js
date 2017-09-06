@@ -8,9 +8,9 @@ var WshShell = new ActiveXObject( "WScript.Shell" );
 var ProcEnv = WshShell.Environment( "Process" );
 var PathVal = ProcEnv("PATH");
 if ( PathVal.length == 0 ) {
-  PathVal = "C:/Xilinx/SDK/2015.2/bin;C:/Xilinx/Vivado/2015.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2015.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2015.2/bin;";
+  PathVal = "C:/Xilinx/Vivado/2015.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2015.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2015.2/bin;";
 } else {
-  PathVal = "C:/Xilinx/SDK/2015.2/bin;C:/Xilinx/Vivado/2015.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2015.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2015.2/bin;" + PathVal;
+  PathVal = "C:/Xilinx/Vivado/2015.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2015.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2015.2/bin;" + PathVal;
 }
 
 ProcEnv("PATH") = PathVal;
@@ -25,7 +25,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
-         "-log Display_test.vdi -applog -m64 -messageDb vivado.pb -mode batch -source Display_test.tcl -notrace" );
+         "-log ECentralController.vdi -applog -m64 -messageDb vivado.pb -mode batch -source ECentralController.tcl -notrace" );
 
 
 
