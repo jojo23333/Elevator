@@ -20,25 +20,26 @@ module ECentralController(RST ,CLK, SW, BTNU, BTNR, BTND, BTNL, BTNC,
     wire [7:0] down_call;
     wire [3:0] elevator_status;              // Up status 、Down status 、Open status、Close status
 
-    wire [3:0] floor;
-    wire [3:0] countdown;
+    wire [2:0] floor;
+    wire [2:0] countdown;
     wire [7:0] floor_btn;
+    wire [7:0] floor_res;
     wire cnt_ck,s_clk,i_clk;
 
-    parameter N_1S = 50_000_000,NSCAN = 100_000,INSCAN = 500_000;
+    parameter N_1S = 50_000_000,NSCAN = 10_000,INSCAN = 5_000;
 
     ClockDivider #(N_1S) clock1s(CLK,cnt_ck);
     ClockDivider #(NSCAN) clockscan(CLK, s_clk);
     ClockDivider #(INSCAN) clockinput(CLK, i_clk);
 
     Display dis(.floor(floor), .countdown(countdown), .led(LED), .an(AN), 
-                .seg(SEG), .floor_btn(floor_btn), .ck(s_clk), .status(elevator_status));
+                .seg(SEG), .floor_btn(floor_res), .iclk(i_clk),.sclk(s_clk), .status(elevator_status));
     
     InputProcessor pinput(.sw(SW),.clk(i_clk),.btnc(BTNC) ,.btnu(BTNU), .btnd(BTND), .up(up_call), 
                         .down(down_call) , .elevator_btn(floor_btn));
     
     StatusTransition ms(.sign(elevator_status), .upcall_input(up_call), .downcall_input(down_call), 
                         .floor_btn_input(floor_btn), .door_btn({BTNL,BTNR}), .rst(RST), .clk(i_clk), .cnt_ck(cnt_ck), 
-                        .floor(floor), .countdown(countdown), .floor_btn(floor_btn));
+                        .floor(floor), .countdown(countdown), .floor_btn(floor_res));//, .led(LED[11:0]));
 
 endmodule

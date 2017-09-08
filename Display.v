@@ -1,9 +1,9 @@
 `timescale 1ns/1ns
 
-module _7SegDecoder(floor,countdown, ck, seg, an);  
+module _7SegDecoder(floor,countdown, clk, ck, seg, an);  
     input [3:0] floor;
-    input [3:0] countdown;
-    input ck;
+    input [2:0] countdown;
+    input ck,clk;
     output reg [7:0] seg;
     output reg [7:0] an;
     
@@ -12,19 +12,19 @@ module _7SegDecoder(floor,countdown, ck, seg, an);
     always @(posedge ck)
         cnt <= cnt + 1;
     
-    always
+    always @(posedge clk)
         case(cnt)
         0: begin num <= floor; an <= 8'b1111_1110; end
-        1: begin num <= floor; an <= 8'b1111_1101; end
-        2: begin num <= floor; an <= 8'b1111_1011; end
-        3: begin num <= floor; an <= 8'b1111_0111; end
+        //1: begin num <= floor; an <= 8'b1111_1101; end
+       // 2: begin num <= floor; an <= 8'b1111_1011; end
+       // 3: begin num <= floor; an <= 8'b1111_0111; end
         4: begin num <= countdown; an <= 8'b1110_1111; end
-        5: begin num <= countdown; an <= 8'b1101_1111; end
-        6: begin num <= countdown; an <= 8'b1011_1111; end
-        7: begin num <= countdown; an <= 8'b0111_1111; end
+       // 5: begin num <= countdown; an <= 8'b1101_1111; end
+       // 6: begin num <= countdown; an <= 8'b1011_1111; end
+       // 7: begin num <= countdown; an <= 8'b0111_1111; end
     endcase
     
-    always begin
+    always @(posedge clk)begin
         if (num==0)     seg <= 8'b11000000;
         else if(num==1)  seg <= 8'b11111001; 
         else if(num==2) seg <= 8'b10100100;
@@ -41,22 +41,24 @@ module _7SegDecoder(floor,countdown, ck, seg, an);
 endmodule  
 
 
-module Display(floor, floor_btn, countdown, ck, status, 
+module Display(floor, floor_btn, countdown, iclk, sclk, status, 
                 led, seg, an);
-    input [3:0] countdown;          //Time to next
+    input [2:0] countdown;          //Time to next
     input [7:0] floor_btn;
-    input [3:0] floor;              //Current Floor
+    input [2:0] floor;              //Current Floor
     input [3:0] status;
-    input ck;
+    input iclk,sclk;
     output [15:0] led;
     output [7:0] seg;
     output [7:0] an;
 
-    assign led[15:12] = floor[3:0];
-    assign led[11:8] = status;
-    assign led[7] = ck;
-    assign led[6:4] = 0;
-    assign led[3:0] = countdown[3:0];
-    _7SegDecoder dis(floor, countdown, ck, seg ,an);
+    wire [3:0] floornum;
+    assign floornum = floor;
+    
+    assign led[15:12] = status;
+////    assign led[7] = ck;
+//    assign led[5:3] = floor[2:0];
+//    assign led[2:0] = countdown[2:0];
+    _7SegDecoder dis(floornum, countdown, iclk, sclk, seg ,an);
 
 endmodule

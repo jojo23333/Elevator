@@ -7,7 +7,7 @@ module InputProcessor(sw, clk, btnc, btnu, btnd, up, down, elevator_btn);
     output reg [7:0] down;
     output reg [7:0] elevator_btn;
 
-    always @(clk) begin
+    always @(posedge clk) begin
       if(btnu)
         up <= sw[15:8];
 	  else
