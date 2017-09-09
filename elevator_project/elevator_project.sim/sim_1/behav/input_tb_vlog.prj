@@ -1,6 +1,5 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  "../../../../Fsm.v"
-verilog xil_defaultlib  "../../../../StatusInputBuffer.v"
 verilog xil_defaultlib  "../../../../InputProcessor.v"
 verilog xil_defaultlib  "../../../../Display.v"
 verilog xil_defaultlib  "../../../../StatusTransition.v"

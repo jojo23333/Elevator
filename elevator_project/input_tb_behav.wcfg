@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="18" />
    <wvobject db_ref_id="1" fp_name="/input_tb/sw" type="array">
       <obj_property name="ElementShortName">sw[15:0]</obj_property>
       <obj_property name="ObjectShortName">sw[15:0]</obj_property>
@@ -67,16 +67,20 @@
       <obj_property name="ElementShortName">countdown[2:0]</obj_property>
       <obj_property name="ObjectShortName">countdown[2:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/input_tb/ms/p/status" type="array">
-      <obj_property name="ElementShortName">status[3:0]</obj_property>
-      <obj_property name="ObjectShortName">status[3:0]</obj_property>
-   </wvobject>
    <wvobject db_ref_id="1" fp_name="/input_tb/ms/floor_btn_input" type="array">
       <obj_property name="ElementShortName">floor_btn_input[7:0]</obj_property>
       <obj_property name="ObjectShortName">floor_btn_input[7:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/input_tb/ms/floor_btn" type="array">
-      <obj_property name="ElementShortName">floor_btn[7:0]</obj_property>
-      <obj_property name="ObjectShortName">floor_btn[7:0]</obj_property>
+   <wvobject db_ref_id="1" fp_name="/input_tb/ms/fsm/status" type="array">
+      <obj_property name="ElementShortName">status[3:0]</obj_property>
+      <obj_property name="ObjectShortName">status[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/input_tb/ms/power" type="logic">
+      <obj_property name="ElementShortName">power</obj_property>
+      <obj_property name="ObjectShortName">power</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/input_tb/ms/door_btn" type="array">
+      <obj_property name="ElementShortName">door_btn[1:0]</obj_property>
+      <obj_property name="ObjectShortName">door_btn[1:0]</obj_property>
    </wvobject>
 </wave_config>

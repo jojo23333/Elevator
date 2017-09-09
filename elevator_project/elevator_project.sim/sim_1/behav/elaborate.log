@@ -3,6 +3,7 @@ Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto e03878b821c64efa9a0a71e6bdf09ef0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot input_tb_behav xil_defaultlib.input_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 3 differs from formal bit length 1 for port floor [C:/Users/jojo/Desktop/Elevator/test_bentch/top_tb.v:59]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -14,7 +15,6 @@ Compiling module xil_defaultlib.timer(times=5)
 Compiling module xil_defaultlib.timer
 Compiling module xil_defaultlib.timer(times=4)
 Compiling module xil_defaultlib.FSM
-Compiling module xil_defaultlib.StatusInputBuffer
 Compiling module xil_defaultlib.StatusTransition
 Compiling module xil_defaultlib.input_tb
 Compiling module xil_defaultlib.glbl

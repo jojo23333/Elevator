@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log StatusTransition.vds -m64 -mode batch -messageDb vivado.pb -notrace -source StatusTransition.tcl
+EAStep vivado -log ECentralController.vds -m64 -mode batch -messageDb vivado.pb -notrace -source ECentralController.tcl

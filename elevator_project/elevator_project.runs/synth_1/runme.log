@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log StatusTransition.vds -m64 -mode batch -messageDb vivado.pb -notrace -source StatusTransition.tcl
+    with args -log ECentralController.vds -m64 -mode batch -messageDb vivado.pb -notrace -source ECentralController.tcl
 
 WARNING: Default location for XILINX_VIVADO_HLS not found: 
 
@@ -9,16 +9,36 @@ WARNING: Default location for XILINX_VIVADO_HLS not found:
   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
-source StatusTransition.tcl -notrace
-Command: synth_design -top StatusTransition -part xc7a100tcsg324-1
+source ECentralController.tcl -notrace
+Command: synth_design -top ECentralController -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 263.086 ; gain = 91.637
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 262.785 ; gain = 91.555
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ECentralController' [C:/Users/jojo/Desktop/Elevator/CentralController.v:8]
+	Parameter N_1S bound to: 50000000 - type: integer 
+	Parameter NSCAN bound to: 80000 - type: integer 
+	Parameter INSCAN bound to: 5000 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'ClockDivider' [C:/Users/jojo/Desktop/Elevator/ClockDivider.v:3]
+	Parameter times bound to: 50000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ClockDivider' (1#1) [C:/Users/jojo/Desktop/Elevator/ClockDivider.v:3]
+INFO: [Synth 8-638] synthesizing module 'ClockDivider__parameterized0' [C:/Users/jojo/Desktop/Elevator/ClockDivider.v:3]
+	Parameter times bound to: 80000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ClockDivider__parameterized0' (1#1) [C:/Users/jojo/Desktop/Elevator/ClockDivider.v:3]
+INFO: [Synth 8-638] synthesizing module 'ClockDivider__parameterized1' [C:/Users/jojo/Desktop/Elevator/ClockDivider.v:3]
+	Parameter times bound to: 5000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ClockDivider__parameterized1' (1#1) [C:/Users/jojo/Desktop/Elevator/ClockDivider.v:3]
+INFO: [Synth 8-638] synthesizing module 'Display' [C:/Users/jojo/Desktop/Elevator/Display.v:77]
+INFO: [Synth 8-638] synthesizing module '_7SegDecoder' [C:/Users/jojo/Desktop/Elevator/Display.v:3]
+INFO: [Synth 8-256] done synthesizing module '_7SegDecoder' (2#1) [C:/Users/jojo/Desktop/Elevator/Display.v:3]
+INFO: [Synth 8-256] done synthesizing module 'Display' (3#1) [C:/Users/jojo/Desktop/Elevator/Display.v:77]
+WARNING: [Synth 8-689] width (1) of port connection 'floor_btn' does not match port width (8) of module 'Display' [C:/Users/jojo/Desktop/Elevator/CentralController.v:39]
+INFO: [Synth 8-638] synthesizing module 'InputProcessor' [C:/Users/jojo/Desktop/Elevator/InputProcessor.v:3]
+INFO: [Synth 8-256] done synthesizing module 'InputProcessor' (4#1) [C:/Users/jojo/Desktop/Elevator/InputProcessor.v:3]
 INFO: [Synth 8-638] synthesizing module 'StatusTransition' [C:/Users/jojo/Desktop/Elevator/StatusTransition.v:4]
-INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/jojo/Desktop/Elevator/Fsm.v:22]
+INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/jojo/Desktop/Elevator/Fsm.v:40]
 	Parameter shutdown bound to: 0 - type: integer 
 	Parameter level bound to: 1 - type: integer 
 	Parameter upgoing bound to: 2 - type: integer 
@@ -28,25 +48,25 @@ INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/jojo/Desktop/Elevator/Fs
 	Parameter opening bound to: 6 - type: integer 
 	Parameter opened bound to: 7 - type: integer 
 	Parameter closing bound to: 8 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'timer' [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
+INFO: [Synth 8-638] synthesizing module 'timer_nested' [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
 	Parameter times bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'timer' (1#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
-INFO: [Synth 8-638] synthesizing module 'timer__parameterized0' [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
+INFO: [Synth 8-256] done synthesizing module 'timer_nested' (5#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
+INFO: [Synth 8-638] synthesizing module 'timer' [C:/Users/jojo/Desktop/Elevator/Fsm.v:24]
 	Parameter times bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'timer__parameterized0' (1#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
-INFO: [Synth 8-638] synthesizing module 'timer__parameterized1' [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
+INFO: [Synth 8-256] done synthesizing module 'timer' (6#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:24]
+INFO: [Synth 8-638] synthesizing module 'timer__parameterized0' [C:/Users/jojo/Desktop/Elevator/Fsm.v:24]
 	Parameter times bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'timer__parameterized1' (1#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
-INFO: [Synth 8-638] synthesizing module 'timer__parameterized2' [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
+INFO: [Synth 8-256] done synthesizing module 'timer__parameterized0' (6#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:24]
+INFO: [Synth 8-638] synthesizing module 'timer__parameterized1' [C:/Users/jojo/Desktop/Elevator/Fsm.v:24]
 	Parameter times bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'timer__parameterized2' (1#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:6]
-WARNING: [Synth 8-3848] Net countdown in module/entity FSM does not have driver. [C:/Users/jojo/Desktop/Elevator/Fsm.v:32]
-INFO: [Synth 8-256] done synthesizing module 'FSM' (2#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:22]
-INFO: [Synth 8-638] synthesizing module 'StatusInputBuffer' [C:/Users/jojo/Desktop/Elevator/StatusInputBuffer.v:3]
-INFO: [Synth 8-256] done synthesizing module 'StatusInputBuffer' (3#1) [C:/Users/jojo/Desktop/Elevator/StatusInputBuffer.v:3]
-INFO: [Synth 8-256] done synthesizing module 'StatusTransition' (4#1) [C:/Users/jojo/Desktop/Elevator/StatusTransition.v:4]
+INFO: [Synth 8-256] done synthesizing module 'timer__parameterized1' (6#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:24]
+WARNING: [Synth 8-3848] Net led in module/entity FSM does not have driver. [C:/Users/jojo/Desktop/Elevator/Fsm.v:49]
+INFO: [Synth 8-256] done synthesizing module 'FSM' (7#1) [C:/Users/jojo/Desktop/Elevator/Fsm.v:40]
+INFO: [Synth 8-256] done synthesizing module 'StatusTransition' (8#1) [C:/Users/jojo/Desktop/Elevator/StatusTransition.v:4]
+WARNING: [Synth 8-3848] Net floor_res in module/entity ECentralController does not have driver. [C:/Users/jojo/Desktop/Elevator/CentralController.v:39]
+INFO: [Synth 8-256] done synthesizing module 'ECentralController' (9#1) [C:/Users/jojo/Desktop/Elevator/CentralController.v:8]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 297.340 ; gain = 125.891
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 298.023 ; gain = 126.793
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -55,8 +75,9 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin dis:floor_btn[0] to constant 0 [C:/Users/jojo/Desktop/Elevator/CentralController.v:38]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 297.340 ; gain = 125.891
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 298.023 ; gain = 126.793
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -64,197 +85,594 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc]
-WARNING: [Vivado 12-584] No ports matched 'CLK'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:7]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:7]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'CLK'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:8]
-CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for create_clock constraint with option '-objects [get_ports CLK]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:8]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-WARNING: [Vivado 12-584] No ports matched 'SW[0]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:13]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[1]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:14]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[2]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:15]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[3]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:16]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[4]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:17]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:17]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[5]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:18]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:18]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[6]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:19]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:19]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[7]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:20]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[8]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:21]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[9]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:22]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[10]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:25]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:25]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[11]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:26]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:26]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[12]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:27]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:27]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[13]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:28]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:28]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[14]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:29]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:29]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[15]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:30]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:30]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:35]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:35]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:36]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:36]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:37]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:37]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:38]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:38]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:39]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:39]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:40]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:40]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:41]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:41]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:42]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:42]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:43]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:43]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:44]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:44]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:45]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:45]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:46]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:46]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:47]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:47]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:48]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:48]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:50]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[0]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:62]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:62]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[1]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:63]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:63]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[2]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:64]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:64]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[3]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:65]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:65]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[4]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:66]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:66]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[5]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:67]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:67]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[6]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:68]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:68]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SEG[7]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:70]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:70]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[0]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:72]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:72]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[1]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:73]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:73]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[2]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:74]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:74]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[3]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:75]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:75]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[4]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:76]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:76]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[5]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:77]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:77]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[6]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:78]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:78]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[7]'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:79]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:79]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'RST'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:84]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:84]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTNC'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:86]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:86]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTNU'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:87]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:87]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTNL'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:88]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:88]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTNR'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:89]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:89]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTND'. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:90]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc:90]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 603.512 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 609.383 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 7 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 7 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 13 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 13 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 14 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 14 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 15 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 15 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 16 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 16 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 17 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 17 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 18 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 18 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 19 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 19 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 20 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 20 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 30 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 30 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 35 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 35 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 36 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 36 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 37 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 37 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 38 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 38 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 39 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 39 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 40 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 40 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 41 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 41 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 42 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 42 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 43 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 43 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 44 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 44 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 45 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 45 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 46 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 46 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 47 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 47 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 48 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 48 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 49 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 49 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 50 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 50 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 62 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 62 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 63 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 63 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 64 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 64 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 65 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 65 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 66 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 66 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 67 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 67 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 68 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 68 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 70 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 70 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 72 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 72 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 73 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 73 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 74 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 74 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 75 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 75 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 76 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 76 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 77 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 77 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 78 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 78 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 79 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 79 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 86 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 86 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 87 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 87 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 88 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 88 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 89 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 89 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 90 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 90 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "led0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'status_reg' in module 'FSM'
 INFO: [Synth 8-5544] ROM "status" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "status" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -272,22 +690,24 @@ INFO: [Synth 8-5544] ROM "status" won't be mapped to Block RAM because address s
 INFO: [Synth 8-5544] ROM "status" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "status" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "status" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'btnstatus_reg' [C:/Users/jojo/Desktop/Elevator/Display.v:25]
+WARNING: [Synth 8-327] inferring latch for variable 'num_reg' [C:/Users/jojo/Desktop/Elevator/Display.v:19]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                     Old Encoding 
 ---------------------------------------------------------------------------------------------------
-                shutdown |                             0000 |                             0000
-                   level |                             0001 |                             0001
-               downgoing |                             0010 |                             0011
-               downlevel |                             0011 |                             0101
-                 opening |                             0100 |                             0110
-                  opened |                             0101 |                             0111
-                 closing |                             0110 |                             1000
-                 uplevel |                             0111 |                             0100
-                 upgoing |                             1000 |                             0010
+                shutdown |                        000000001 |                             0000
+                   level |                        000000010 |                             0001
+                 upgoing |                        000000100 |                             0010
+                 uplevel |                        000001000 |                             0100
+                 opening |                        000010000 |                             0110
+                  opened |                        000100000 |                             0111
+                 closing |                        001000000 |                             1000
+               downlevel |                        010000000 |                             0101
+               downgoing |                        100000000 |                             0011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'status_reg' using encoding 'sequential' in module 'FSM'
+INFO: [Synth 8-3354] encoded FSM with state register 'status_reg' using encoding 'one-hot' in module 'FSM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -301,21 +721,26 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      4 Bit       Adders := 6     
-	   2 Input      3 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 5     
 +---Registers : 
-	                8 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
 	                4 Bit    Registers := 5     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 16    
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 13    
 +---Muxes : 
-	   9 Input     32 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 4     
+	  34 Input      9 Bit        Muxes := 1     
+	  11 Input      8 Bit        Muxes := 1     
+	   7 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 11    
+	   7 Input      4 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 5     
 	   9 Input      4 Bit        Muxes := 1     
-	  31 Input      4 Bit        Muxes := 1     
 	   9 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 38    
-	   9 Input      1 Bit        Muxes := 15    
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   7 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 37    
+	   9 Input      1 Bit        Muxes := 17    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -323,10 +748,53 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module StatusTransition 
+Module ClockDivider 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
+Module ClockDivider__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module ClockDivider__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module _7SegDecoder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
++---Muxes : 
+	  11 Input      8 Bit        Muxes := 1     
+	   7 Input      8 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 1     
+Module Display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+Module InputProcessor 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 9     
+Module timer_nested 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module timer 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -354,37 +822,20 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-Module timer__parameterized2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	                4 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
 Module FSM 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 2     
 +---Registers : 
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                1 Bit    Registers := 10    
 +---Muxes : 
-	   9 Input     32 Bit        Muxes := 1     
+	  34 Input      9 Bit        Muxes := 1     
 	   9 Input      4 Bit        Muxes := 1     
-	  31 Input      4 Bit        Muxes := 1     
 	   9 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 33    
-	   9 Input      1 Bit        Muxes := 15    
-Module StatusInputBuffer 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 8     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 32    
+	   9 Input      1 Bit        Muxes := 17    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -397,17 +848,18 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 603.512 ; gain = 432.063
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3331] design StatusTransition has unconnected port countdown[2]
-WARNING: [Synth 8-3331] design StatusTransition has unconnected port countdown[1]
-WARNING: [Synth 8-3331] design StatusTransition has unconnected port countdown[0]
+INFO: [Synth 8-5544] ROM "dis/led0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-3917] design ECentralController has port AN[3] driven by constant 1
+WARNING: [Synth 8-3917] design ECentralController has port AN[1] driven by constant 1
+WARNING: [Synth 8-3917] design ECentralController has port SEG[7] driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 609.383 ; gain = 438.152
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -418,27 +870,591 @@ Report RTL Partitions:
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 609.383 ; gain = 438.152
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 7 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 7 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 13 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 13 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 14 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 14 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 15 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 15 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 16 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 16 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 17 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 17 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 18 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 18 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 19 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 19 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 20 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 20 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 30 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 30 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 35 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 35 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 36 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 36 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 37 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 37 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 38 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 38 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 39 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 39 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 40 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 40 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 41 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 41 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 42 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 42 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 43 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 43 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 44 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 44 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 45 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 45 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 46 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 46 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 47 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 47 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 48 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 48 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 49 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 49 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 50 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 50 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 62 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 62 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 63 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 63 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 64 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 64 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 65 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 65 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 66 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 66 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 67 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 67 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 68 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 68 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 70 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 70 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 72 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 72 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 73 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 73 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 74 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 74 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 75 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 75 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 76 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 76 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 77 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 77 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 78 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 78 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 79 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 79 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 86 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 86 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 87 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 87 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 88 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 88 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 89 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 89 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
+incorrect argument "-dict" for "set_property" at line 90 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+incorrect set of required parameters for "set_property" at line 90 of file C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
+---------------------------------------------------------------------
+Usage:
+  set_property
+    [-help]
+    [-quiet]
+    attribute
+    value
+    object
+    [{>|>>} <stdoutFile>]
+---------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -450,7 +1466,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -468,7 +1484,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -481,7 +1497,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -493,13 +1509,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Start Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -512,54 +1528,62 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |BUFG  |     2|
-|2     |LUT1  |     8|
-|3     |LUT2  |    10|
-|4     |LUT3  |    15|
-|5     |LUT4  |    35|
-|6     |LUT5  |    23|
-|7     |LUT6  |    64|
-|8     |MUXF7 |     2|
-|9     |FDCE  |    20|
-|10    |FDRE  |    39|
-|11    |IBUF  |    29|
-|12    |OBUF  |    15|
-|13    |OBUFT |     3|
-+------+------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    24|
+|3     |LUT1   |   105|
+|4     |LUT2   |    18|
+|5     |LUT3   |    20|
+|6     |LUT4   |    44|
+|7     |LUT5   |    46|
+|8     |LUT6   |    90|
+|9     |MUXF7  |     3|
+|10    |FDCE   |    20|
+|11    |FDRE   |   148|
+|12    |LD     |     8|
+|13    |IBUF   |    15|
+|14    |OBUF   |    32|
++------+-------+------+
 
 Report Instance Areas: 
-+------+--------------+----------------------+------+
-|      |Instance      |Module                |Cells |
-+------+--------------+----------------------+------+
-|1     |top           |                      |   265|
-|2     |  fsm         |FSM                   |   130|
-|3     |    t_closing |timer__parameterized2 |    15|
-|4     |    t_downgo  |timer                 |    13|
-|5     |    t_opened  |timer__parameterized1 |    16|
-|6     |    t_opening |timer__parameterized0 |    12|
-|7     |    t_upgo    |timer_0               |    18|
-|8     |  st_buffer   |StatusInputBuffer     |    84|
-+------+--------------+----------------------+------+
++------+----------------+-----------------------------+------+
+|      |Instance        |Module                       |Cells |
++------+----------------+-----------------------------+------+
+|1     |top             |                             |   575|
+|2     |  clock1s       |ClockDivider                 |    80|
+|3     |  clockinput    |ClockDivider__parameterized1 |    81|
+|4     |  clockscan     |ClockDivider__parameterized0 |    80|
+|5     |  dis           |Display                      |    29|
+|6     |    dis         |_7SegDecoder                 |    29|
+|7     |  ms            |StatusTransition             |   171|
+|8     |    fsm         |FSM                          |   171|
+|9     |      t_closing |timer__parameterized1        |    24|
+|10    |      t_downgo  |timer_nested                 |    18|
+|11    |      t_opened  |timer__parameterized0        |    13|
+|12    |      t_opening |timer                        |    15|
+|13    |      t_upgo    |timer_nested_0               |    18|
+|14    |  pinput        |InputProcessor               |    85|
++------+----------------+-----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 603.512 ; gain = 88.461
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 603.512 ; gain = 432.063
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 609.383 ; gain = 89.180
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 609.383 ; gain = 438.152
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 47 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 8 instances were transformed.
+  LD => LDCE: 8 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-43 Infos, 60 Warnings, 56 Critical Warnings and 0 Errors encountered.
+57 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 603.512 ; gain = 394.633
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 603.512 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Sep 08 21:21:45 2017...
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 609.383 ; gain = 400.902
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 609.383 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 09 17:34:11 2017...

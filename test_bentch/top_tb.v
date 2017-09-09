@@ -2,7 +2,7 @@
 
 module input_tb();
 	reg [15:0]sw;
-	reg btnu=0,btnd=0,btnc=0;
+	reg btnu=0,btnd=0,btnc=0,btnl=0,btnr=0;
 	reg clk = 0,cnt_clk = 0;
 	wire [7:0] an,seg;
 	wire [15:0] led;
@@ -27,6 +27,8 @@ module input_tb();
 	end
 	
 	always begin
+	   	#150_000 rst = 1;
+        #150_000 rst = 0;
 		#150_000 sw = 16'b0000_0000_0000_0001;
 		#150_000 btnc = 1;
 		#150_000 btnc = 0;
@@ -56,9 +58,9 @@ module input_tb();
                 .seg(seg), .floor_btn(floor_res), .sclk(clk),.iclk(clk), .status(elevator_status));
     
     InputProcessor pinput(.sw(sw),.clk(clk),.btnc(btnc) ,.btnu(btnu), .btnd(btnd), .up(up_call), 
-                        .down(down_call) , .elevator_btn(floor_btn));
+                        .down(down_call) , .elevator_btn(floor_btn), .floor(floor), .status(elevator_status), .rst(rst));
     
     StatusTransition ms(.sign(elevator_status), .upcall_input(up_call), .downcall_input(down_call), 
                         .floor_btn_input(floor_btn), .door_btn({btnl,btnr}), .rst(rst), .clk(clk), .cnt_ck(cnt_clk), 
-                        .floor(floor), .countdown(countdown), .floor_btn(floor_res));
+                        .floor(floor), .countdown(countdown));//, .floor_btn(floor_res));
 endmodule
