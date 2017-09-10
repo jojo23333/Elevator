@@ -1,5 +1,9 @@
 `timescale 1ns/1ns
 
+/*
+Module_Name: ClockDivider
+Module_Function: Divide system CLK
+*/
 module ClockDivider
     #( parameter times = 50_000_000)
     (CLK, ck);

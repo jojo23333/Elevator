@@ -1,8 +1,9 @@
 `timescale 1ns/1ns
-//`define c_us(x) ((x) * 100)
-//`define c_ms(x) ((x) * 100_000)
-//`define c_s(x) ((x) * 100_000_000)
 
+/*
+Module_Name: 		timer_nested
+Module_Function: 	Timer and output countdown
+*/
 module timer_nested
     #(parameter times = 2)
     (done, clk, rst_n, clr, countdown);
@@ -21,6 +22,10 @@ module timer_nested
     end
 endmodule
 
+/*
+Module_Name: 		timer
+Module_Function: 	Timer with unit of seconds
+*/
 module timer
     #(parameter times = 2)
     (done, clk, rst_n, clr);
@@ -37,19 +42,24 @@ module timer
     end
 endmodule
 
+
+/*
+Module_Name: 		FSM
+Module_Function: 	Finite state machine of the elevator, control the elevator's stauts transfer
+*/
 module FSM(upcall, downcall, floor_btn, power, floor, 
-                    countdown, clk, ck, door_btn, status, led, nextup, nextdown);
-	input [7:0] upcall;
-    input [7:0] downcall;
-    input [7:0] floor_btn;
-    input [1:0] door_btn;
+    countdown, clk, ck, door_btn, status, led, nextup, nextdown);
+	input [7:0] upcall;				// Request to go upstairs from outside
+    input [7:0] downcall;			// Request to go downstairs from outside
+    input [7:0] floor_btn;			// Request to go to certain inside the elevator
+    input [1:0] door_btn;			// Two door_btn 
     input power;
     input ck,clk; 
-    output reg [2:0] floor;
-    output [3:0] led;
-    output  [2:0] countdown;
-    output reg [3:0] status;
-	output reg nextup, nextdown;
+    output reg [2:0] floor;			// Current floor
+    output [3:0] led;				// LED for debug
+    output  [2:0] countdown;		// Current time countdown
+    output reg [3:0] status;		// Status of FSM
+	output reg nextup, nextdown;	// Show whether the elevator is going up or down
 	
     wire [2:0] up_countdown,down_countdown;
 //    assign led[0] = power;
@@ -57,14 +67,16 @@ module FSM(upcall, downcall, floor_btn, power, floor,
 //	assign led[2] = leveldown_flag;
 //	assign led[3] = levelup_flag;
 	
-    reg  tflag;				// uplevel & downlevel 传给opening
+    reg  tflag;				
     reg upflag, downflag, openingflag, closingflag, openedflag;
     wire upgo_done, downgo_done, opening_done, opened_done, closing_done;
     wire clr = 0;
     
     assign countdown = upflag ?up_countdown:down_countdown;
-    timer_nested #(5) t_upgo(.done(upgo_done), .clk(ck), .rst_n(upflag), .clr(clr) , .countdown(up_countdown));
-    timer_nested #(5) t_downgo(.done(downgo_done), .clk(ck), .rst_n(downflag), .clr(clr), .countdown(down_countdown));
+    timer_nested #(5) t_upgo(.done(upgo_done), .clk(ck), 
+			.rst_n(upflag), .clr(clr) , .countdown(up_countdown));
+    timer_nested #(5) t_downgo(.done(downgo_done), .clk(ck), 
+			.rst_n(downflag), .clr(clr), .countdown(down_countdown));
     timer #(2) t_opening(.done(opening_done), .clk(ck), .rst_n(openingflag), .clr(clr));
     timer #(4) t_opened(.done(opened_done), .clk(ck), .rst_n(openedflag), .clr(door_btn[0]));
     timer #(4) t_closing(.done(closing_done), .clk(ck), .rst_n(closingflag), .clr(door_btn[0]));

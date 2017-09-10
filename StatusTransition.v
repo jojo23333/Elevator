@@ -1,24 +1,25 @@
-`timescale 1ns/1ns
+`timescale 1ns/1ps
 
-
+/*
+Module_Name: 		StatusTransition
+Module_Function: 	Proccess input and output of FSM 
+*/
 module StatusTransition(upcall_input, downcall_input, floor_btn_input, door_btn, rst, clk, cnt_ck, 
                         floor, countdown ,sign, led, nextup,nextdown);
-    input [7:0] upcall_input;
-    input [7:0] downcall_input;
-    input [7:0] floor_btn_input;
-    input [1:0] door_btn;
+    input [7:0] upcall_input;		// Request to go upstairs from outside
+    input [7:0] downcall_input;		// Request to go downstairs from outside
+    input [7:0] floor_btn_input;	// Request to go to certain inside the elevator
+    input [1:0] door_btn;			// Two door_btn 
     input rst;
     input clk,cnt_ck;
-    output [3:0] sign;
-    output [2:0] floor, countdown;
-    //output [7:0] floor_btn;
-    output [11:0] led;
-    output nextup,nextdown;
+    output [3:0] sign;				// Status of FSM
+    output [2:0] floor, countdown;	// Current floor and time countdown
+    output [11:0] led;				// LED for debug
+    output nextup,nextdown;			// Show whether the elevator is going up or down
 
-    wire upflag, downflag, openflag;
-    
-    //wire [7:0] upcall, downcall;
+    wire upflag, downflag, openflag;    
     wire [3:0] status;
+	
     assign sign = status;
 
     FSM fsm(.upcall(upcall_input), .downcall(downcall_input) , .floor_btn(floor_btn_input), .power(rst), .floor(floor), 
@@ -26,6 +27,4 @@ module StatusTransition(upcall_input, downcall_input, floor_btn_input, door_btn,
 
 //    StatusInputBuffer st_buffer(.floor(floor), .status(status), .rst(rst),.clk(clk) ,.upcall_input(upcall_input), .downcall_input(downcall_input), 
 //           .floor_btn_input(floor_btn_input) ,.upcall(upcall), .downcall(downcall), .floor_btn(floor_btn));
-    
-
 endmodule

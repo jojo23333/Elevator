@@ -1,4 +1,8 @@
 `timescale 1ns/1ns
+/*
+Module_Name: 		_7SegDecoder
+Module_Function: 	Decode numbers,Show current countdown && floor
+*/
 
 module _7SegDecoder(floor,countdown, clk, ck, seg, an, up, down);  
     input [3:0] floor;
@@ -73,14 +77,18 @@ module _7SegDecoder(floor,countdown, clk, ck, seg, an, up, down);
     
 endmodule  
 
+/*
+Module_Name: 		Display
+Module_Function: 	Show current countdown && floor && btn status
+*/
 
 module Display(floor, floor_btn, countdown, iclk, sclk, status, 
                 led, seg, an ,up, down);
     input [2:0] countdown;          //Time to next
-    input [7:0] floor_btn, up, down;
+    input [7:0] floor_btn, up, down;//Status of all input btn
     input [2:0] floor;              //Current Floor
-    input [3:0] status;
-    input iclk,sclk;
+    input [3:0] status;				//Status of FSM
+    input iclk,sclk;				//Two clock signal,sclk used to scan an,iclk used to control synchronous timing
     output [15:0] led;
     output [7:0] seg;
     output [7:0] an;
@@ -94,9 +102,9 @@ module Display(floor, floor_btn, countdown, iclk, sclk, status,
     assign led[14] = (status!=7 && status != 6 && status!= 8 && status!= 0)?1:0;
     assign led[13] = (status==4 || status == 2)?1:0;
     assign led[12] = (status==3 || status == 5)?1:0;
-////    assign led[7] = ck;
-//    assign led[5:3] = floor[2:0];
-//    assign led[2:0] = countdown[2:0];
+
+	assign led[7:0] = floor_btn;
+	
     assign seg = (status==0)? 8'b1111_1111:dseg;
     assign an = (status==0)? 8'b1111_1111:dan;
     
