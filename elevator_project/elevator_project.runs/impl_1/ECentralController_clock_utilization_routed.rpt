@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date              : Sat Sep 09 17:35:19 2017
+| Date              : Mon Sep 11 08:18:56 2017
 | Host              : DESKTOP-R4VK0U2 running 64-bit major release  (build 9200)
 | Command           : report_clock_utilization -file ECentralController_clock_utilization_routed.rpt
 | Design            : ECentralController
@@ -48,8 +48,8 @@ Table of Contents
 +-------+--------------------+---------------+------+-------+-------+
 | Index | BUFG Cell          | Net Name      | BELs | Sites | Fixed |
 +-------+--------------------+---------------+------+-------+-------+
-|     1 | i_clk_BUFG_inst    | i_clk_BUFG    |   46 |    22 |    no |
-|     2 | CLK_IBUF_BUFG_inst | CLK_IBUF_BUFG |   99 |    27 |    no |
+|     1 | i_clk_BUFG_inst    | i_clk_BUFG    |   46 |    24 |    no |
+|     2 | CLK_IBUF_BUFG_inst | CLK_IBUF_BUFG |  132 |    36 |    no |
 +-------+--------------------+---------------+------+-------+-------+
 
 
@@ -65,17 +65,14 @@ Table of Contents
 6. Details of Local Clocks
 --------------------------
 
-+-------+------------------------------+----------------------------------+--------------+-------+
-|       |                              |                                  |   Num Loads  |       |
-+-------+------------------------------+----------------------------------+------+-------+-------+
-| Index | Local Clk Src                | Net Name                         | BELs | Sites | Fixed |
-+-------+------------------------------+----------------------------------+------+-------+-------+
-|     1 | dis/dis/btnstatus_reg[1]_i_2 | dis/dis/btnstatus_reg[1]_i_2_n_0 |    1 |     1 |    no |
-|     2 | clockscan/ck_reg             | clockscan/CLK                    |    4 |     2 |    no |
-|     3 | dis/dis/num_reg[3]_i_2       | dis/dis/num_reg[3]_i_2_n_0       |    4 |     1 |    no |
-|     4 | dis/dis/cnt_reg[2]           | dis/dis/Q[2]                     |   16 |     6 |    no |
-|     5 | clock1s/ck_reg               | clock1s/CLK                      |   21 |     7 |    no |
-+-------+------------------------------+----------------------------------+------+-------+-------+
++-------+------------------+---------------+--------------+-------+
+|       |                  |               |   Num Loads  |       |
++-------+------------------+---------------+------+-------+-------+
+| Index | Local Clk Src    | Net Name      | BELs | Sites | Fixed |
++-------+------------------+---------------+------+-------+-------+
+|     1 | clockscan/ck_reg | clockscan/CLK |    4 |     2 |    no |
+|     2 | clock1s/ck_reg   | clock1s/CLK   |   21 |     7 |    no |
++-------+------------------+---------------+------+-------+-------+
 
 
 7. Clock Regions : Key Resource Utilization
@@ -88,7 +85,7 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 20800 |    0 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y0              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 |    0 | 12000 |    0 |  2200 |    0 |    40 |    0 |    20 |    0 |    40 |
-| X0Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  143 | 16000 |    0 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X0Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  168 | 16000 |    0 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   33 | 15200 |    0 |  2600 |    0 |    60 |    0 |    30 |    0 |    40 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 16000 |    0 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 15200 |    0 |  2600 |    0 |    60 |    0 |    30 |    0 |    40 |
@@ -105,7 +102,7 @@ Table of Contents
 | Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s | Clock Net Name |
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 | BUFG        | BUFHCE_X0Y20 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  46 |     0 |        0 | i_clk_BUFG     |
-| BUFG        | BUFHCE_X0Y21 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  66 |     0 |        0 | CLK_IBUF_BUFG  |
+| BUFG        | BUFHCE_X0Y21 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  99 |     0 |        0 | CLK_IBUF_BUFG  |
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 
 
@@ -148,39 +145,18 @@ add_cells_to_pblock [get_pblocks  {CLKAG_CLK_IBUF_BUFG}] [get_cells -filter { PR
 resize_pblock [get_pblocks {CLKAG_CLK_IBUF_BUFG}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
 #endgroup
 
-# Clock net "clock1s/CLK" driven by instance "clock1s/ck_reg" located at site "SLICE_X4Y79"
+# Clock net "clock1s/CLK" driven by instance "clock1s/ck_reg" located at site "SLICE_X10Y69"
 #startgroup
 create_pblock {CLKAG_clock1s/CLK}
 add_cells_to_pblock [get_pblocks  {CLKAG_clock1s/CLK}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="clock1s/CLK"}]]]
 resize_pblock [get_pblocks {CLKAG_clock1s/CLK}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
 #endgroup
 
-# Clock net "clockscan/CLK" driven by instance "clockscan/ck_reg" located at site "SLICE_X5Y84"
+# Clock net "clockscan/CLK" driven by instance "clockscan/ck_reg" located at site "SLICE_X9Y72"
 #startgroup
 create_pblock {CLKAG_clockscan/CLK}
 add_cells_to_pblock [get_pblocks  {CLKAG_clockscan/CLK}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="clockscan/CLK"}]]]
 resize_pblock [get_pblocks {CLKAG_clockscan/CLK}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
-#endgroup
-
-# Clock net "dis/dis/Q[2]" driven by instance "dis/dis/cnt_reg[2]" located at site "SLICE_X4Y83"
-#startgroup
-create_pblock {CLKAG_dis/dis/Q[2]}
-add_cells_to_pblock [get_pblocks  {CLKAG_dis/dis/Q[2]}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dis/dis/Q[2]"}]]]
-resize_pblock [get_pblocks {CLKAG_dis/dis/Q[2]}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
-#endgroup
-
-# Clock net "dis/dis/btnstatus_reg[1]_i_2_n_0" driven by instance "dis/dis/btnstatus_reg[1]_i_2" located at site "SLICE_X2Y82"
-#startgroup
-create_pblock {CLKAG_dis/dis/btnstatus_reg[1]_i_2_n_0}
-add_cells_to_pblock [get_pblocks  {CLKAG_dis/dis/btnstatus_reg[1]_i_2_n_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dis/dis/btnstatus_reg[1]_i_2_n_0"}]]]
-resize_pblock [get_pblocks {CLKAG_dis/dis/btnstatus_reg[1]_i_2_n_0}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
-#endgroup
-
-# Clock net "dis/dis/num_reg[3]_i_2_n_0" driven by instance "dis/dis/num_reg[3]_i_2" located at site "SLICE_X1Y83"
-#startgroup
-create_pblock {CLKAG_dis/dis/num_reg[3]_i_2_n_0}
-add_cells_to_pblock [get_pblocks  {CLKAG_dis/dis/num_reg[3]_i_2_n_0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dis/dis/num_reg[3]_i_2_n_0"}]]]
-resize_pblock [get_pblocks {CLKAG_dis/dis/num_reg[3]_i_2_n_0}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1}
 #endgroup
 
 # Clock net "i_clk_BUFG" driven by instance "i_clk_BUFG_inst" located at site "BUFGCTRL_X0Y0"

@@ -1,0 +1,251 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Sep 11 14:22:12 2017
+# Process ID: 8344
+# Log file: C:/Users/jojo/Desktop/Elevator/elevator_project/vivado.log
+# Journal file: C:/Users/jojo/Desktop/Elevator/elevator_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.xpr
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 1 ms
+run 1 ms
+run 1 ms
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 1 ms
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+restart
+run 5 ns
+restart
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+restart
+save_wave_config {C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+save_wave_config {C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+save_wave_config {C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 5 ns
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+run 5 ns
+save_wave_config {C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 5 ns
+run 5 ns
+run 5 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+restart
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+run 300 ns
+run 10 ns
+run 300 ns
+close_sim
+launch_simulation
+open_wave_config C:/Users/jojo/Desktop/Elevator/elevator_project/input_tb_behav.wcfg
+source input_tb.tcl
+run 300 ns
+run 300 ns
+close_sim

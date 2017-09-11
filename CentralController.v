@@ -5,12 +5,12 @@ Module_Name: Top Module
 Module_Function: set regs and inputs & outputs
 */
 
-module ECentralController(RST, CLK, SW, BTNU, BTNR, BTND, BTNL, BTNC,
+module ECentralController(RST, CLK, SW, UpBtn, OpenDoorBtn, CloseDoorBtn, DownBtn, InsideBtn,
                             LED, AN, SEG);
     input RST;                      	  // Reset signal, controled by a switch
     input CLK;                      	  // System clock
     input [7:0] SW;                 	  // Switch input ,SW[7:0] directly represent the button in elevator
-    input UpBtn, OpenDoorBtn, CloseDoorBtn, DownBtn, OutsideBtn;   // BTN for up or down
+    input UpBtn, OpenDoorBtn, CloseDoorBtn, DownBtn, InsideBtn;   // BTN for up or down
     output [15:0] LED;
     output [7:0] AN;
     output [7:0] SEG;
@@ -34,13 +34,13 @@ module ECentralController(RST, CLK, SW, BTNU, BTNR, BTND, BTNL, BTNC,
 
     Display dis(.floor(floor), .countdown(countdown),  .up(up_call),  .down(down_call),
                 .floor_btn(floor_btn), .status(elevator_status), .iclk(i_clk),.sclk(s_clk),
-				.led(LED), .an(AN), .seg(SEG));
+				.led(LED), .an(AN), .seg(SEG), .clk(CLK));
     
-    InputProcessor pinput(.sw(SW),.clk(i_clk),.btnc(OutsideBtn) ,.btnu(UpBtn), .btnd(DownBtn), .up(up_call), .nextup(nextup) ,.nextdown(nextdown),
+    InputProcessor pinput(.sw(SW),.clk(i_clk),.btnc(InsideBtn) ,.btnu(UpBtn), .btnd(DownBtn), .up(up_call), .nextup(nextup) ,.nextdown(nextdown),
                         .down(down_call) , .elevator_btn(floor_btn), .status(elevator_status), .floor(floor), .rst(RST));
     
-    StatusTransition ms(.sign(elevator_status), .upcall_input(up_call), .downcall_input(down_call), 
-                        .floor_btn_input(floor_btn), .door_btn({CloseDoorBtn,OpenDoorBtn}), .rst(RST), .clk(i_clk), .cnt_ck(cnt_ck), 
-                        .floor(floor), .countdown(countdown), .led(LED[11:0]), .nextup(nextup) ,.nextdown(nextdown));
+    FSM  ms(.status(elevator_status), .upcall(up_call), .downcall(down_call), 
+                .floor_btn(floor_btn), .door_btn({CloseDoorBtn,OpenDoorBtn}), .power(RST), .clk(i_clk), .ck(cnt_ck), 
+            .floor(floor), .countdown(countdown), .nextup(nextup) ,.nextdown(nextdown),.led(LED[11:8]));
 
 endmodule

@@ -1,0 +1,96 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Sep 11 08:06:21 2017
+# Process ID: 12660
+# Log file: C:/Users/jojo/Desktop/Elevator/elevator_project/vivado.log
+# Journal file: C:/Users/jojo/Desktop/Elevator/elevator_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 763.609 ; gain = 205.770
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Mon Sep 11 08:07:18 2017] Launched synth_1...
+Run output will be captured here: C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.runs/synth_1/runme.log
+[Mon Sep 11 08:07:18 2017] Launched impl_1...
+Run output will be captured here: C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2015.2
+  **** Build date : Jun 26 2015-16:56:39
+    ** Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target [lindex [get_hw_targets -of_objects [get_hw_servers localhost]] 0]
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292746988A
+ERROR: [Labtools 27-2269] No devices detected on target localhost/xilinx_tcf/Digilent/210292746988A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target [lindex [get_hw_targets -of_objects [get_hw_servers localhost]] 0]
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292746988A
+set_property PROGRAM.FILE {C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.runs/impl_1/ECentralController.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.runs/impl_1/ECentralController.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Mon Sep 11 08:17:12 2017] Launched synth_1...
+Run output will be captured here: C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.runs/synth_1/runme.log
+[Mon Sep 11 08:17:12 2017] Launched impl_1...
+Run output will be captured here: C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2015.2
+  **** Build date : Jun 26 2015-16:56:39
+    ** Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 828.105 ; gain = 0.000
+open_hw_target [lindex [get_hw_targets -of_objects [get_hw_servers localhost]] 0]
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292746988A
+set_property PROGRAM.FILE {C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.runs/impl_1/ECentralController.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+close_hw
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 11 11:55:15 2017...

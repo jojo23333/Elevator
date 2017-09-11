@@ -1,9 +1,6 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  "../../../../Fsm.v"
 verilog xil_defaultlib  "../../../../InputProcessor.v"
-verilog xil_defaultlib  "../../../../Display.v"
-verilog xil_defaultlib  "../../../../StatusTransition.v"
-verilog xil_defaultlib  "../../../../test_bentch/top_tb.v"
+verilog xil_defaultlib  "../../../../test_bentch/input_tb.v"
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

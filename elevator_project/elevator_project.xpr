@@ -18,42 +18,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../Fsm.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../Display.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../InputProcessor.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../ClockDivider.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../StatusTransition.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../CentralController.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -62,14 +27,16 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ECentralController"/>
+        <Option Name="TopModule" Val="InputProcessor"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/../DDR_nexys4.xdc">
+      <File Path="$PSRCDIR/constrs_1/imports/Elevator/DDR_nexys4.xdc">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../DDR_nexys4.xdc"/>
+          <Attr Name="ImportTime" Val="1505057940"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -80,15 +47,17 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../test_bentch/top_tb.v">
+      <File Path="$PPRDIR/../test_bentch/input_tb.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/input_tb_behav.wcfg">
+      <File Path="$PSRCDIR/sim_1/imports/Elevator/elevator_project/input_tb_behav.wcfg">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/input_tb_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1504880302"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -97,7 +66,6 @@
         <Option Name="TopModule" Val="input_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
-        <Option Name="SimMode" Val="post-synthesis"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/input_tb_behav.wcfg"/>
         <Option Name="NLNetlistMode" Val="funcsim"/>

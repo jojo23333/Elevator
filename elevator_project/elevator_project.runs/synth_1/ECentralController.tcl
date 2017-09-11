@@ -4,7 +4,6 @@
 
 set_param xicom.use_bs_reader 1
 debug::add_scope template.lib 1
-set_msg_config -id {Common-41} -limit 4294967295
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a100tcsg324-1
@@ -16,15 +15,14 @@ set_property parent.project_path C:/Users/jojo/Desktop/Elevator/elevator_project
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/jojo/Desktop/Elevator/Fsm.v
+  C:/Users/jojo/Desktop/Elevator/ClockDivider.v
   C:/Users/jojo/Desktop/Elevator/Display.v
   C:/Users/jojo/Desktop/Elevator/InputProcessor.v
-  C:/Users/jojo/Desktop/Elevator/ClockDivider.v
-  C:/Users/jojo/Desktop/Elevator/StatusTransition.v
+  C:/Users/jojo/Desktop/Elevator/Fsm.v
   C:/Users/jojo/Desktop/Elevator/CentralController.v
 }
-read_xdc C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc
-set_property used_in_implementation false [get_files C:/Users/jojo/Desktop/Elevator/DDR_nexys4.xdc]
+read_xdc C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.srcs/constrs_1/imports/Elevator/DDR_nexys4.xdc
+set_property used_in_implementation false [get_files C:/Users/jojo/Desktop/Elevator/elevator_project/elevator_project.srcs/constrs_1/imports/Elevator/DDR_nexys4.xdc]
 
 synth_design -top ECentralController -part xc7a100tcsg324-1
 write_checkpoint -noxdef ECentralController.dcp

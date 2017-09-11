@@ -1,9 +1,9 @@
 `timescale 1ns/1ns
-module top(CLK, SEG, AN, LED);
-    input CLK;
-    output [7:0]SEG;
-    output [7:0]AN;
-    output [15:0] LED;
+module display_tb();
+    reg CLK;
+    wire [7:0]SEG;
+    wire [7:0]AN;
+    wire [15:0] LED;
     
     wire ck_scan,ck;
     wire [7:0] floor_btn;
@@ -13,6 +13,10 @@ module top(CLK, SEG, AN, LED);
     
     assign floor_btn = 0;
     assign status = 0;
+	
+	always
+		CLK =~CLK;
+	
     ClockDivider mck(CLK,ck);
     ClockDivider #(100_000)mc(CLK,ck_scan);
     

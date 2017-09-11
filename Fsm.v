@@ -71,6 +71,7 @@ module FSM(upcall, downcall, floor_btn, power, floor,
     reg upflag, downflag, openingflag, closingflag, openedflag;
     wire upgo_done, downgo_done, opening_done, opened_done, closing_done;
     wire clr = 0;
+    reg leveldown_flag,levelup_flag,shutdownflag;
     
     assign countdown = upflag ?up_countdown:down_countdown;
     timer_nested #(5) t_upgo(.done(upgo_done), .clk(ck), 
@@ -79,7 +80,7 @@ module FSM(upcall, downcall, floor_btn, power, floor,
 			.rst_n(downflag), .clr(clr), .countdown(down_countdown));
     timer #(2) t_opening(.done(opening_done), .clk(ck), .rst_n(openingflag), .clr(clr));
     timer #(4) t_opened(.done(opened_done), .clk(ck), .rst_n(openedflag), .clr(door_btn[0]));
-    timer #(4) t_closing(.done(closing_done), .clk(ck), .rst_n(closingflag), .clr(door_btn[0]));
+    timer #(2) t_closing(.done(closing_done), .clk(ck), .rst_n(closingflag), .clr(door_btn[0]));
 	
 	integer k,tfloor;
 	
@@ -87,6 +88,7 @@ module FSM(upcall, downcall, floor_btn, power, floor,
 	   floor = 0; nextup = 0; nextdown = 0; tflag = 0;
        upflag = 0; downflag = 0; openingflag = 0; closingflag = 0; openedflag = 0;
        leveldown_flag = 0; levelup_flag = 0;
+       status = 0;
 	end
 				
 	parameter shutdown = 0, level = 1, upgoing = 2, downgoing = 3,
@@ -239,8 +241,6 @@ module FSM(upcall, downcall, floor_btn, power, floor,
 			default:
 			     status = shutdown;
 		endcase
-
-    reg leveldown_flag,levelup_flag,shutdownflag;
     
     always@(posedge clk)begin
         if(status==level)   begin

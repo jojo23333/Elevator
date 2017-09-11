@@ -20,10 +20,8 @@ module _7SegDecoder(floor,countdown, clk, ck, seg, an, up, down);
     
     always @(*)
         case(cnt)
-        0: begin num = floor; an = 8'b1111_1110; end
-        //1: begin num <= floor; an <= 8'b1111_1101; end
-        2: begin num = countdown; an = 8'b1111_1011; end
-        //3: begin num <= floor; an <= 8'b1111_0111; end
+        0: begin num = floor; an = 8'b1111_1110; btnstatus = 4'b0000;end
+        2: begin num = countdown; an = 8'b1111_1011; btnstatus = 4'b0000;end
         4: begin 
             num = 10;
             btnstatus[0] = down[0]?1 : 0;   btnstatus[1] = up[0]?1 : 0;
@@ -32,7 +30,7 @@ module _7SegDecoder(floor,countdown, clk, ck, seg, an, up, down);
          end
         5: begin
             num = 10; 
-            btnstatus[0] = down[2]?1 : 0;   btnstatus[2] = up[2]?1 : 0;
+            btnstatus[0] = down[2]?1 : 0;   btnstatus[1] = up[2]?1 : 0;
             btnstatus[2] = down[3]?1 : 0;   btnstatus[3] = up[3]?1 : 0;
             an = 8'b1101_1111; 
          end
@@ -48,10 +46,11 @@ module _7SegDecoder(floor,countdown, clk, ck, seg, an, up, down);
             btnstatus[2] = down[7]?1 : 0;   btnstatus[3] = up[7]?1 : 0;
             an = 8'b0111_1111; 
          end
-        default an = 8'b1111_1111;
-        //5: begin num <= countdown; an <= 8'b1101_1111; end
-        //6: begin num <= countdown; an <= 8'b1011_1111; end
-        //7: begin num <= countdown; an <= 8'b0111_1111; end
+        default begin
+            num = 10;
+            an = 8'b1111_1111;
+            btnstatus = 4'b0000;
+        end
     endcase
     
     always @*begin
@@ -82,24 +81,27 @@ Module_Name: 		Display
 Module_Function: 	Show current countdown && floor && btn status
 */
 
-module Display(floor, floor_btn, countdown, iclk, sclk, status, 
+module Display(floor, floor_btn, countdown, iclk, sclk, clk, status, 
                 led, seg, an ,up, down);
-    input [2:0] countdown;          //Time to next
-    input [7:0] floor_btn, up, down;//Status of all input btn
-    input [2:0] floor;              //Current Floor
-    input [3:0] status;				//Status of FSM
-    input iclk,sclk;				//Two clock signal,sclk used to scan an,iclk used to control synchronous timing
+    input [2:0] countdown;          	//Time to next
+    input [7:0] floor_btn, up, down;	//Status of all input btn
+    input [2:0] floor;              	//Current Floor
+    input [3:0] status;					//Status of FSM
+    input iclk,sclk,clk;				//Two clock signal,sclk used to scan an,iclk used to control synchronous timing
     output [15:0] led;
     output [7:0] seg;
     output [7:0] an;
 
     wire [3:0] floornum;
     wire [7:0] dseg,dan;
+    wire flash_clk;
     assign floornum = floor + 1;
     
+    ClockDivider #(10_000_000) flash_clock(clk,flash_clk);
+    //ClockDivider #(1) flash_clock(clk,flash_clk);
     assign led[11:8] = status;
-    assign led[15] = (status==7)?1:0;
-    assign led[14] = (status!=7 && status != 6 && status!= 8 && status!= 0)?1:0;
+    assign led[15] = (status==7) ? 1 :(status==6? flash_clk:0);
+    assign led[14] = (status!=7 && status != 6 && status!= 8 && status!= 0)?1:(status==8? flash_clk:0);
     assign led[13] = (status==4 || status == 2)?1:0;
     assign led[12] = (status==3 || status == 5)?1:0;
 
